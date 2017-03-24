@@ -1,0 +1,65 @@
+apt-get install make
+sudo apt-get install patchutils
+apt-get install gcc
+sudo apt-get install libproc-processtable-perl
+
+https://tvheadend.org/boards/4/topics/18246
+sudo apt-get update
+sudo apt-get install libproc-processtable-perl
+I managed to get this card working on Unbuntu 15.10 just last week using the opensource drivers. This is the procedure I followed:
+//Just did it, commented line #1573 in vhl/compat.h The build still fails:
+sudo apt-get update
+sudo apt-get install build-essential git patchutils linux-headers-$(uname -r) libproc-processtable-perl
+git clone https://github.com/ljalves/media_build.git
+git clone --depth=1 https://github.com/ljalves/linux_media.git -b latest ./media
+apt-get install build-essential
+apt-get install patchutils
+cd media_build
+make dir DIR=../media
+make distclean
+make
+sudo make install 
+sudo make rmmod
+sudo modprobe saa716x_budget int_type=1
+
+//Pengaturan proxy
+https://angrytechnician.wordpress.com/2012/07/31/converting-your-multicast-iptv-freeview-to-http-unicast-using-udpxy/
+
+//multicast to unicast over loopback
+route add -net 224.0.0.0 netmask 240.0.0.0 dev lo:1
+//install dvblast
+sudo apt-get install dvblast
+sudi apt-get install dvb-apps
+
+
+Linux ubuntu 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:09:55 UTC 2017 i686 athlon i686 GNU/Linux
+
+
+Server4You2016
+
+//scan freqwensi
+dvblast -a 0 -f 12500000 -s 
+//dvb0.conf
+
+224.224.0.1:1350 1 1350
+224.224.0.1:1351 1 1351
+224.224.0.1:1352 1 1352
+224.224.0.1:1353 1 1353
+224.224.0.1:1354 1 1355
+224.224.0.1:1355 1 1356
+224.224.0.1:1356 1 1357
+224.224.0.1:1357 1 1358
+224.224.0.1:1359 1 1359
+224.224.0.1:1360 1 1360
+
+dvblast -a 0 -c dvb0.conf -f 12500000 -s 43215000 -v 13 -m psk_8
+dvblast -a 0 -f 12500000 -s 43215000 -v 13 -m psk_8
+
+dvblast -a 0 -f 10993000 -s 15605000 -v 13 -m psk_8
+ 
+
+http://36.81.156.138:81/udp/224.224.0.1:1350
+
+ dvblast -a 0 --f 03786000 -s 05630000 -v 13 -m psk_8
+
+

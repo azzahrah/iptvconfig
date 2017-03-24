@@ -1,0 +1,2 @@
+ifconfig lo:1 127.0.0.2
+route add -net 224.0.0.0 netmask 240.0.0.0 dev lo:1

@@ -1,0 +1,31 @@
+enp4s6    Link encap:Ethernet  HWaddr 60:e3:27:04:3b:3f
+          inet addr:192.168.0.154  Bcast:192.168.1.255  Mask:255.255.254.0
+          inet6 addr: fe80::62e3:27ff:fe04:3b3f/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1260 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:665 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:114620 (114.6 KB)  TX bytes:93597 (93.5 KB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:240 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:240 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1
+          RX bytes:17760 (17.7 KB)  TX bytes:17760 (17.7 KB)
+
+		  
+		  enp4s6
+		  
+auto enp4s6
+iface enp4s6 inet static
+    address 192.168.0.42
+    netmask 255.255.254.0
+    network 192.168.0.0
+    broadcast 192.168.1.255
+    gateway 192.168.0.1
+    dns-nameservers 8.8.8.8 8.8.4.4
+    dns-domain google.com
+    dns-search google.com
